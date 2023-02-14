@@ -1,5 +1,6 @@
 <template>
   <AppHeader />
+  <AppFooter />
 </template>
 
 <script>

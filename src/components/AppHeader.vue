@@ -46,7 +46,7 @@ header {
   grid-template-rows: 100%;
   grid-template-areas: 'navigation title personNav';
   justify-items: center;
-  align-items:center;
+  align-items: center;
   background-color: #191919;
   color: $color;
   font-family: $font-family;
@@ -95,10 +95,10 @@ header {
     grid-area: personNav;
 
     .personNav__icon {
-      margin-left: 5px;
+      margin-top: 10px;
       padding: 15px;
       background-repeat: no-repeat;
-      background-size: 20% 20%;
+      background-size: 50% 50%;
     }
 
     #search {
