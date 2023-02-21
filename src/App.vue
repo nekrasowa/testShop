@@ -1,9 +1,8 @@
 <template>
-  <div class='mainPart'>
-  </div>
-    <AppHeader />
-    <AppMainHome />
-    <AppFooter />
+  <div class='mainBack'></div>
+  <AppHeader />
+  <AppMainHome />
+  <AppFooter />
 </template>
 
 <script>
@@ -29,16 +28,16 @@ export default {
 </script>
 
 <style lang="scss">
-.mainPart {
+.mainBack {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -285%;
   z-index: 2;
   background-image: url('./icons/photos/bg_letters.png');
   background-size: 100%;
-  background-color: black;
-  opacity: 0.6;
-  width: 100%;
-  height: 100%;
+  background-color: rgba(240, 248, 255, 0);
+  opacity: 10%;
+  width: 100vw;
+  height: 500vmax;
 }
 </style>
