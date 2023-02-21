@@ -44,6 +44,7 @@ $font-style: normal;
 $color: #FFFFFF;
 
 footer {
+  z-index: 3;
   position: absolute;
   width: 100%;
   height: 35%;

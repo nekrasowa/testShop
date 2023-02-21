@@ -1,11 +1,14 @@
 <template>
-  <AppHeader />
-  <AppFooter />
+  <div class='mainPart'>
+  </div>
+    <AppHeader />
+    <AppMainHome />
+    <AppFooter />
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue';
-import AppMainHome from './components/AppMain.vue';
+import AppMainHome from './components/AppMainHome.vue';
 import AppFooter from './components/AppFooter.vue';
 
 export default {
@@ -22,16 +25,20 @@ export default {
     AppMainHome,
     AppFooter
   },
-
-
 }
 </script>
 
 <style lang="scss">
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
-
+.mainPart {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-image: url('./icons/photos/bg_letters.png');
+  background-size: 100%;
+  background-color: black;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+}
 </style>

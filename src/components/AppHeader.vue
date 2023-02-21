@@ -36,6 +36,7 @@ $font-style: normal;
 $color: #FFFFFF;
 
 header {
+  z-index: 3;
   position: absolute;
   width: 100%;
   height: 7%;
