@@ -1,5 +1,4 @@
 <template>
-  <div class='mainBack'></div>
   <AppHeader />
   <AppMainHome />
   <AppFooter />
@@ -28,16 +27,5 @@ export default {
 </script>
 
 <style lang="scss">
-.mainBack {
-  position: absolute;
-  left: 0;
-  top: -285%;
-  z-index: 2;
-  background-image: url('./icons/photos/bg_letters.png');
-  background-size: 100%;
-  background-color: rgba(240, 248, 255, 0);
-  opacity: 10%;
-  width: 100vw;
-  height: 500vmax;
-}
+
 </style>

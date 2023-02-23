@@ -1,12 +1,14 @@
 <template>
-  <div class='translucent' id='welcome'>
-    <div id='welcome__textblock'>
-      <h1 class='mainInfo'>
-        New collection
-      </h1>
-      <button type='button' id='welcome__btnCatalog'>
-        GO TO CATALOG
-      </button>
+  <div id='welcome'>
+    <div class='translucent'>
+      <div id='welcome__textblock'>
+        <h1 class='mainInfo'>
+          New collection
+        </h1>
+        <button type='button' id='welcome__btnCatalog'>
+          GO TO CATALOG
+        </button>
+      </div>
     </div>
   </div>
 
@@ -21,32 +23,38 @@
     </div>
   </div>
 
-  <div class='translucent' id='sale'>
-    <h1 class='mainInfo'>
-    </h1>
-    <div class='sale__gallery'>
+  <div class='translucent'>
+    <div id='sale'>
+      <h1 class='mainInfo'>
+      </h1>
+      <div class='sale__gallery'>
 
+      </div>
     </div>
   </div>
 
-  <div class='translucent' id='popular'>
-    <h1 class='mainInfo'>
-    </h1>
-    <div class='popular__items'>
+  <div class='translucent'>
+    <div id='popular'>
+      <h1 class='mainInfo'>
+      </h1>
+      <div class='popular__items'>
 
+      </div>
     </div>
   </div>
 
-  <div class='translucent' id='subscribe'>
-    <h1 class='mainInfo'>
-    </h1>
-    <p></p>
-    <input />
-    <button type='checkbox'>
+  <div class='translucent'>
+    <div id='subscribe'>
+      <h1 class='mainInfo'>
+      </h1>
+      <p></p>
+      <input />
+      <button type='checkbox'>
 
-    </button>
-    <p></p>
-    <button></button>
+      </button>
+      <p></p>
+      <button></button>
+    </div>
   </div>
 </template>
 
@@ -58,9 +66,11 @@ export default {
 
 <style lang="scss" scoped>
 .translucent {
-  z-index: 0;
-  position: relative;
-
+  background-image: url('../icons/photos/bg_letters-transp.png');
+  background-size: 100%;
+  background-position: 0% 130%;
+  width: 100%;
+  height: 100vh;
   .mainInfo {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -73,26 +83,29 @@ export default {
 
 #welcome {
   display: block;
-  position: relative;
+  position: absolute;
+  top: 7%;
+  left: 0;
   margin: 0;
-  background: linear-gradient(0deg, rgba(105, 48, 29, 0.19), rgba(105, 48, 29, 0.19)), url('../icons/photos/bl-girl.jpeg');
+  background: linear-gradient(0deg, rgba(105, 48, 29, 0.19), rgba(105, 48, 29, 0.19));
+  background-image: url('../icons/photos/bl-girl.png');
   background-color: #d5985f;
   background-repeat: no-repeat;
-  background-position: 20rem 0%;
-  background-size: 80%;
+  background-position: 0 30px;
+  background-size: 100%;
   width: 100%;
-  height: 100vh;
+  height: 90vmax;
 
   #welcome__textblock {
-    z-index: 4;
-
     position: absolute;
-    top: 40%;
+    top: 20%;
     left: 30%;
     width: 20%;
 
+
     .mainInfo {
       text-transform: none;
+
     }
 
     #welcome__btnCatalog {
@@ -129,19 +142,15 @@ export default {
 
 #nav {
   display: grid;
-  z-index: 3;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100%;
   grid-template-areas: 'man women';
   justify-items: center;
   align-items: center;
 
-  .nav__photo {
+  .nav__photo {}
 
-  }  
-  #nav__photo_man {
-    
-  }
+  #nav__photo_man {}
 
 }
 
