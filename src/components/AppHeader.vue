@@ -36,12 +36,9 @@ $font-style: normal;
 $color: #FFFFFF;
 
 header {
-  z-index: 3;
-  position: absolute;
   width: 100%;
   height: 7%;
-  left: 0px;
-  top: 0px;
+  margin-top: 0px;
   display: grid;
   grid-template-columns: 4fr 2fr 4fr;
   grid-template-rows: 100%;

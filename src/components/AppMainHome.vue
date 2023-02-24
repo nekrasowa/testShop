@@ -15,25 +15,26 @@
   <div id='nav'>
     <div class='nav__photo' id='nav__photo_man'>
       <h1 class='mainInfo'>
+        <a href=''>Man</a>
       </h1>
     </div>
     <div class='nav__photo' id='nav__photo_woman'>
       <h1 class='mainInfo'>
+        <a href=''>Woman</a>
       </h1>
     </div>
   </div>
 
-  <div class='translucent'>
+  <div id='addInfo' class='translucent'>
     <div id='sale'>
       <h1 class='mainInfo'>
+        The Gifting Sale
       </h1>
       <div class='sale__gallery'>
-
+        
       </div>
     </div>
-  </div>
 
-  <div class='translucent'>
     <div id='popular'>
       <h1 class='mainInfo'>
       </h1>
@@ -41,9 +42,7 @@
 
       </div>
     </div>
-  </div>
 
-  <div class='translucent'>
     <div id='subscribe'>
       <h1 class='mainInfo'>
       </h1>
@@ -65,46 +64,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$width: 100%;
+$height: 100vh;
+
+
 .translucent {
   background-image: url('../icons/photos/bg_letters-transp.png');
   background-size: 100%;
   background-position: 0% 130%;
-  width: 100%;
-  height: 100vh;
-  .mainInfo {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    font-size: 2em;
+  width: $width;
+  height: $height;
+}
 
-  }
+.mainInfo {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 2em;
+  text-align: center;
 }
 
 #welcome {
   display: block;
-  position: absolute;
-  top: 7%;
-  left: 0;
+  position: relative;
   margin: 0;
   background: linear-gradient(0deg, rgba(105, 48, 29, 0.19), rgba(105, 48, 29, 0.19));
   background-image: url('../icons/photos/bl-girl.png');
   background-color: #d5985f;
   background-repeat: no-repeat;
-  background-position: 0 30px;
-  background-size: 100%;
-  width: 100%;
-  height: 90vmax;
+  background-size: cover;
+  width: $width;
+  height: $height;
 
   #welcome__textblock {
     position: absolute;
-    top: 20%;
+    top: 37%;
     left: 30%;
     width: 20%;
 
 
     .mainInfo {
       text-transform: none;
+      font-weight: 800;
 
     }
 
@@ -141,17 +142,72 @@ export default {
 }
 
 #nav {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100%;
-  grid-template-areas: 'man women';
-  justify-items: center;
-  align-items: center;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'man woman';
 
-  .nav__photo {}
+  .nav__photo {
+    width: $width;
+    height: $height;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-  #nav__photo_man {}
+    .mainInfo {
+      position: absolute;
+      bottom: 0;
+      margin: 0 auto 0;
+      padding: 2% 0%;
+      width: 50%;
+      background-color: rgba(25, 25, 25, 0.5);
+      text-align: center;
+      font-size: 2.5em;
 
+      a {
+        text-decoration: none;
+        color: #FFFFFF;
+
+      }
+    }
+  }
+
+  #nav__photo_man {
+    grid-area: man;
+    background-image: url('../icons/photos/bl-men.jpeg');
+  }
+
+  #nav__photo_woman {
+    grid-area: woman;
+    background-image: url('../icons/photos/w-girl.jpeg');
+  }
+
+}
+
+#addInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &.translucent {
+    background-position: 50% 28%;
+    background-size: 120%;
+    background-color: #191919;
+  }
+
+  #sale {
+    width: $width;
+    height: $height;
+    
+    h1 {
+      margin-top: 5%;
+      font-size: 3em;
+    }
+
+    .sale__gallery {
+
+    }
+  }
 }
 
 #sale {}
