@@ -30,17 +30,13 @@
       <h1 class='mainInfo'>
         The Gifting Sale
       </h1>
-      <div class='sale__gallery'>
-        
-      </div>
+      <AppMainHomeSale />
+
     </div>
 
     <div id='popular'>
       <h1 class='mainInfo'>
       </h1>
-      <div class='popular__items'>
-
-      </div>
     </div>
 
     <div id='subscribe'>
@@ -57,10 +53,9 @@
   </div>
 </template>
 
-<script>
-export default {
+<script setup>
+import AppMainHomeSale from './AppMainHomeSale.vue';
 
-}
 </script>
 
 <style lang="scss" scoped>
@@ -196,15 +191,13 @@ $height: 100vh;
   }
 
   #sale {
-    width: $width;
+    width: $width*2;
     height: $height;
-    
-    h1 {
-      margin-top: 5%;
-      font-size: 3em;
-    }
 
-    .sale__gallery {
+    h1 {
+      margin-top: 3%;
+      font-size: 3em;
+      width: 50%;
 
     }
   }

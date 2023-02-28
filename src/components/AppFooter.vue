@@ -19,23 +19,15 @@
   </footer>
 </template>
 
-<script>
+<script setup>
 import AppFooterNavigation from './AppFooterNavigation.vue'
 
-export default {
-  components: {
-    AppFooterNavigation
-  },
-  data() {
-    return {
-      parts: [
-        { header: 'About', part1: 'Finolino, Inc.', part2: 'Policies', part3: 'FAQs' },
-        { header: 'Help', part1: 'Delivery', part2: 'Payment', part3: 'Return' },
-        { header: 'Contacts', part1: '+11 (011) 111 11 11', part2: '+22 (022) 222 22 22', part3: 'finolino@finolino.com' },
-      ]
-    }
-  }
-}
+const parts = [
+  { header: 'About', part1: 'Finolino, Inc.', part2: 'Policies', part3: 'FAQs' },
+  { header: 'Help', part1: 'Delivery', part2: 'Payment', part3: 'Return' },
+  { header: 'Contacts', part1: '+11 (011) 111 11 11', part2: '+22 (022) 222 22 22', part3: 'finolino@finolino.com' },
+]
+
 </script>
 
 <style lang="scss" scoped>
@@ -64,11 +56,12 @@ footer {
   .leftSide {
     grid-area: leftSide;
     margin-left: 30%;
+
     .logo {
       font-size: 200%;
       margin-bottom: 20%;
     }
-    
+
     .crs {
       color: #858585;
       font-size: 80%;
@@ -89,20 +82,21 @@ footer {
         background-repeat: no-repeat;
         background-size: 50% 50%;
       }
+
       #insta {
-          background-image: url('../icons/instagram.svg');
+        background-image: url('../icons/instagram.svg');
 
-        }
+      }
 
-        #faceb {
-          background-image: url('../icons/facebook.svg');
+      #faceb {
+        background-image: url('../icons/facebook.svg');
 
-        }
+      }
 
-        #pin {
-          background-image: url('../icons/pinterest.svg');
+      #pin {
+        background-image: url('../icons/pinterest.svg');
 
-        }
+      }
     }
 
   }

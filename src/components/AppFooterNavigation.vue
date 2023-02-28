@@ -24,11 +24,6 @@ export default {
       type: Array,
       require: true
     }
-  },
-  setup() {
-
-
-    return {}
   }
 }
 </script>
