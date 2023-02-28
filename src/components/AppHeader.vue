@@ -33,6 +33,8 @@
 $font-family: 'Inter', sans-serif;
 $font-style: normal;
 $color: #FFFFFF;
+$font-weight: bold;
+
 
 header {
   width: 100%;
@@ -48,6 +50,7 @@ header {
   color: $color;
   font-family: $font-family;
   font-style: $font-style;
+  font-weight: bold;
   text-transform: uppercase;
 
 

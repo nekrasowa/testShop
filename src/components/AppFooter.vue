@@ -34,6 +34,8 @@ const parts = [
 $font-family: 'Inter', sans-serif;
 $font-style: normal;
 $color: #FFFFFF;
+$font-weight: bold;
+
 
 footer {
   // position: absolute;
@@ -52,6 +54,7 @@ footer {
   align-items: center;
   font-family: $font-family;
   font-style: $font-style;
+  font-weight: bold;
 
   .leftSide {
     grid-area: leftSide;

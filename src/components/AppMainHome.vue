@@ -74,6 +74,7 @@ $height: 100vh;
 .mainInfo {
   font-family: 'Inter', sans-serif;
   font-style: normal;
+  font-weight: bold;
   color: #FFFFFF;
   font-size: 2em;
   text-align: center;

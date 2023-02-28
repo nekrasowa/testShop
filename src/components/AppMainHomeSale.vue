@@ -1,21 +1,16 @@
 <template>
-  <swiper 
-    class='sale__gallery'   
-    :slides-per-view="1" 
-    :space-between="50" 
-    @swiper="onSwiper" 
-    @slideChange="onSlideChange">
-    
+  <swiper class='sale__gallery' :slides-per-view="1" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+
     <swiper-slide class='sale__item' v-for='item in items' :style="{ backgroundImage: 'url(' + item.image + ')' }">
-      <h2>
-        {{ item.title }}
-      </h2>
-      <p>
-        {{ item.description }}
-      </p>
-
+      <div class='sale__description'>
+        <h2>
+          {{ item.title }}
+        </h2>
+        <p>
+          {{ item.description }}
+        </p>
+      </div>
     </swiper-slide>
-
   </swiper>
 </template>
 
@@ -42,6 +37,10 @@ const onSlideChange = () => {
 </script>
 
 <style lang="scss" scoped>
+$font-family: 'Inter', sans-serif;
+$font-style: normal;
+$color: #FFFFFF;
+
 .sale__gallery {
   position: absolute;
   padding-left: 7%;
@@ -51,7 +50,7 @@ const onSlideChange = () => {
   flex-direction: row;
   align-items: stretch;
   overflow-x: auto;
-
+  min-width: 0;
 
   .sale__item {
     margin-left: 2%;
@@ -61,7 +60,25 @@ const onSlideChange = () => {
     background-repeat: no-repeat;
     background-position: center center;
 
+    .sale__description {
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(25, 25, 25, 0.5);
+      width: 100%;
+      height: 20%;
 
+      h2,
+      p {
+        font-family: $font-family;
+        font-style: $font-style;
+        color: $color;
+        padding-left: 5%;
+        font-weight: bold;
+
+      }
+
+      p {}
+    }
   }
 }
 </style>
