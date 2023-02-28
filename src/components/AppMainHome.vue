@@ -191,14 +191,12 @@ $height: 100vh;
   }
 
   #sale {
-    width: $width*2;
+    width: $width;
     height: $height;
 
     h1 {
       margin-top: 3%;
       font-size: 3em;
-      width: 50%;
-
     }
   }
 }
