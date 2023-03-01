@@ -27,13 +27,6 @@ const items = [
   { title: '3 Lorem ipsum dolor sit amet', description: '3000 UAH and under', image: saleImg3, id: 2 },
 ]
 
-const onSwiper = (swiper) => {
-  console.log(swiper);
-};
-const onSlideChange = () => {
-  console.log('slide change');
-};
-
 </script>
 
 <style lang="scss" scoped>

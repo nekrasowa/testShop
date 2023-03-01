@@ -37,6 +37,7 @@
     <div id='popular'>
       <h1 class='mainInfo'>
       </h1>
+      <AppProductCard />
     </div>
 
     <div id='subscribe'>
@@ -55,6 +56,7 @@
 
 <script setup>
 import AppMainHomeSale from './AppMainHomeSale.vue';
+import AppProductCard from './AppProductCard.vue';
 
 </script>
 
