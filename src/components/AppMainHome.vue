@@ -36,8 +36,9 @@
 
     <div id='popular'>
       <h1 class='mainInfo'>
+        Popular items
       </h1>
-      <AppProductCard />
+      <AppMainHomePopular />
     </div>
 
     <div id='subscribe'>
@@ -56,7 +57,7 @@
 
 <script setup>
 import AppMainHomeSale from './AppMainHomeSale.vue';
-import AppProductCard from './AppProductCard.vue';
+import AppMainHomePopular from './AppMainHomePopular.vue';
 
 </script>
 
@@ -186,6 +187,7 @@ $height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
+  height: auto;
 
   &.translucent {
     background-position: 50% 28%;
@@ -193,20 +195,26 @@ $height: 100vh;
     background-color: #191919;
   }
 
+  h1 {
+    margin-top: 5%;
+    font-size: 3em;
+  }
+
   #sale {
     width: $width;
     height: $height;
 
-    h1 {
-      margin-top: 3%;
-      font-size: 3em;
-    }
+
+  }
+
+  #popular {
+    display: block;
+    width: $width;
+    height: 80vh;
+  }
+
+  #subscribe {
+    display: block;
   }
 }
-
-#sale {}
-
-#popular {}
-
-#subscribe {}
 </style>

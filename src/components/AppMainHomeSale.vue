@@ -38,7 +38,7 @@ $color: #FFFFFF;
   position: absolute;
   padding-left: 7%;
   width: 90%;
-  height: 105vh;
+  height: 80vh;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -47,7 +47,7 @@ $color: #FFFFFF;
 
   .sale__item {
     margin-left: 2%;
-    height: 70%;
+    height: 100%;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
