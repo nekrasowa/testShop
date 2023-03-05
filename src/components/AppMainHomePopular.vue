@@ -14,7 +14,8 @@ $font-family: 'Inter', sans-serif;
 $font-style: normal;
 $color: #FFFFFF;
 .popular__set {
-  position: absolute;
-
+  position: relative;
+  display: flex;
+  
 }
 </style>

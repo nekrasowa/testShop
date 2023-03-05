@@ -35,7 +35,7 @@ $font-style: normal;
 $color: #FFFFFF;
 
 .sale__gallery {
-  position: absolute;
+  position: relative;
   padding-left: 7%;
   width: 90%;
   height: 80vh;
@@ -44,6 +44,12 @@ $color: #FFFFFF;
   align-items: stretch;
   overflow-x: auto;
   min-width: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;  
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .sale__item {
     margin-left: 2%;
