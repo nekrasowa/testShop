@@ -21,7 +21,22 @@
 <script setup>
 import noImage from '/photos/no-image.jpeg'
 
-const product = {
+const product = defineProps({
+  id: Number,
+  title: String,
+  image: {
+    type: String,
+    default: noImage
+  },
+  price: Number,
+  update_date: String,
+  is_new: Boolean,
+  sizes:  Array,
+  seasons: Array
+})
+
+
+const product1 = {
   "id": 1,
   "title": "Octinoxate and Titanium Dioxide",
   "image": "https://content1.rozetka.com.ua/goods/images/big_tile/238608720.jpg",
@@ -78,14 +93,12 @@ $font-style: normal;
 
     .productCard__title,
     .productCard__price,
-    .productCard__seasons,
-    .productCard__seasons,
     .productCard__sizes {
       margin: 2% 0 2% 0;
 
     }
 
-    .productCard__price {}
+    // .productCard__price {}
 
     .productCard__seasonsHeader {
       color: #858585;
@@ -98,8 +111,6 @@ $font-style: normal;
     .productCard__sizes {
       display: flex;
       flex-flow: row nowrap;
-      // align-items: center;
-      // align-content: center;
 
       .productCard__sizeItem {
         border: 1px solid black;

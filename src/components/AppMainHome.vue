@@ -38,7 +38,10 @@
       <h1 class='mainInfo'>
         Popular items
       </h1>
-      <AppMainHomePopular />
+      <Suspense>
+        <AppMainHomePopular />
+      </Suspense>
+
     </div>
 
     <div id='subscribe'>
