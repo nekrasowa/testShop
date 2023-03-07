@@ -5,7 +5,7 @@
       <p class='productCard__label' v-if='product.is_new'>New</p>
     </picture>
     <div class='productCard__description'>
-      <p class='productCard__title'>{{ product.title }}</p>
+      <p class='productCard__title'>{{ shownTitle(product.title) }}</p>
       <p class='productCard__price'>{{ product.price + ' UAN' }}</p>
       <span class='productCard__seasonsHeader'>Season: </span>
       <span class='productCard__seasons' v-for='season in product.seasons'>
@@ -23,7 +23,9 @@ import noImage from '/photos/no-image.jpeg'
 
 const product = defineProps({
   id: Number,
-  title: String,
+  title: {
+    type: String,
+  },
   image: {
     type: String,
     default: noImage
@@ -31,21 +33,25 @@ const product = defineProps({
   price: Number,
   update_date: String,
   is_new: Boolean,
-  sizes:  Array,
+  sizes: Array,
   seasons: Array
 })
 
+const shownTitle = (title) => {
+  console.log('[title]:', title, title.length)
 
-const product1 = {
-  "id": 1,
-  "title": "Octinoxate and Titanium Dioxide",
-  "image": "https://content1.rozetka.com.ua/goods/images/big_tile/238608720.jpg",
-  "price": 9399.47,
-  "update_date": "2022-06-22",
-  "is_new": true,
-  "sizes": ["XS", "S", "M"],
-  "seasons": ["winter", "winter"]
+  let shownShortTitle = title
+  if (title.length > 25) {
+    const shortTitle = title.slice(0, 26)
+
+    shownShortTitle = `${shortTitle}...`
+    console.log('[title short]:', shownShortTitle)
+
+    return shownShortTitle
+  }
+  return shownShortTitle
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -121,4 +127,5 @@ $font-style: normal;
     }
   }
 
-}</style>
+}
+</style>

@@ -16,6 +16,7 @@ const getPopulars = (array) => array.slice(0, 4)
 const popularProduct = getPopulars(jsonProducts)
 
 console.log('[popularProduct]:', popularProduct, typeof popularProduct)
+console.log('[popularProduct]:', popularProduct[1])
 
 </script>
 
