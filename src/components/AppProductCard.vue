@@ -1,15 +1,21 @@
 <template>
   <div class='productCard'>
     <picture class='productCard__imgWraper'>
-      <img :src='product.image || noImage' :alt='"image " + product.title' class='productCard__img'>
+      <img 
+        :src='product.image || noImage' 
+        :alt='"image " + product.title' 
+        class='productCard__img'
+      >
       <p class='productCard__label' v-if='product.is_new'>New</p>
     </picture>
     <div class='productCard__description'>
       <p class='productCard__title'>{{ shownTitle(product.title) }}</p>
       <p class='productCard__price'>{{ product.price + ' UAN' }}</p>
-      <span class='productCard__seasonsHeader'>Season: </span>
-      <span class='productCard__seasons' v-for='season in product.seasons'>
-        {{ season + ' ' }}
+      <span class='productCard__seasonsHeader'>
+        Season: 
+      </span>
+      <span class='productCard__seasons'>
+        {{ shownSeasons(product.seasons) }}
       </span>
       <div class='productCard__sizes'>
         <span class='productCard__sizeItem' v-for='size in product.sizes'>{{ size }}</span>
@@ -38,19 +44,17 @@ const product = defineProps({
 })
 
 const shownTitle = (title) => {
-  console.log('[title]:', title, title.length)
-
   let shownShortTitle = title
-  if (title.length > 25) {
-    const shortTitle = title.slice(0, 26)
 
+  if (title.length > 23) {
+    const shortTitle = title.slice(0, 24)
     shownShortTitle = `${shortTitle}...`
-    console.log('[title short]:', shownShortTitle)
-
     return shownShortTitle
   }
   return shownShortTitle
 }
+
+const shownSeasons = (seasons) => seasons.join(', ')
 
 </script>
 
@@ -59,6 +63,7 @@ $font-family: 'Inter', sans-serif;
 $font-style: normal;
 
 .productCard {
+  margin: 0px 0.5em 0 0.5em;
   display: flex;
   flex-direction: column;
   height: 20em;
@@ -68,10 +73,12 @@ $font-style: normal;
   background-position: center center;
 
   .productCard__imgWraper {
+    position: relative;
     padding: 0;
+    max-height: 12em;
     border-top-left-radius: 10px;
     overflow: hidden;
-    position: relative;
+    background-color: #ffffff;
   }
 
   .productCard__img {
@@ -91,20 +98,27 @@ $font-style: normal;
 
   .productCard__description {
     background-color: rgb(255, 255, 255);
-    // height: 6em;
     font-family: $font-family;
     font-style: $font-style;
     font-size: 0.8em;
-    padding-left: 5%;
+    padding: 5%;
+    height: 4em;
+    overflow: hidden;
+
+    &:hover {
+      height: fit-content;
+    }
 
     .productCard__title,
     .productCard__price,
     .productCard__sizes {
-      margin: 2% 0 2% 0;
-
+      margin-top: 2%;
     }
 
-    // .productCard__price {}
+    .productCard__price {
+      margin-bottom: 15%;
+
+    }
 
     .productCard__seasonsHeader {
       color: #858585;
@@ -120,7 +134,7 @@ $font-style: normal;
 
       .productCard__sizeItem {
         border: 1px solid black;
-        width: 10%;
+        width: 15%;
         margin-left: 2%;
         text-align: center
       }
