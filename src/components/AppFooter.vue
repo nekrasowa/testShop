@@ -39,7 +39,7 @@ $font-weight: bold;
 
 footer {
   // position: absolute;
-  margin-top: -80px;
+  // margin-top: -80px;
   width: 100%;
   height: 35%;
   left: 0px;

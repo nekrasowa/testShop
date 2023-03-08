@@ -46,14 +46,23 @@
 
     <div id='subscribe'>
       <h1 class='mainInfo'>
+        Subscribe to newsletter
       </h1>
-      <p></p>
-      <input />
-      <button type='checkbox'>
-
-      </button>
-      <p></p>
-      <button></button>
+      <h4 class='subscribe__description'>Sign up for email updates on the our latest offers and news</h4>
+      <input name='email' class='subscribe__emailInput' placeholder='Enter Your Email' />
+      
+      <p class='subscribe__acception'>
+        <label class='subscribe__checkbox'>
+          <input 
+            type='checkbox' 
+            name='acception'
+          >
+          <span class='subscribe__acceptionText'>
+            I accept the terms of <a href='#'>Privacy Policy</a>
+          </span>
+        </label>    
+      </p>
+      <button class='subscribe__btn'></button>
     </div>
   </div>
 </template>
@@ -64,10 +73,9 @@ import AppMainHomePopular from './AppMainHomePopular.vue';
 
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 $width: 100%;
 $height: 100vh;
-
 
 .translucent {
   background-image: url('../icons/photos/bg_letters-transp.png');
@@ -108,6 +116,7 @@ $height: 100vh;
     .mainInfo {
       text-transform: none;
       font-weight: 800;
+      text-align: start;
 
     }
 
@@ -169,7 +178,6 @@ $height: 100vh;
       a {
         text-decoration: none;
         color: #FFFFFF;
-
       }
     }
   }
@@ -206,18 +214,114 @@ $height: 100vh;
   #sale {
     width: $width;
     height: $height;
-
-
   }
 
   #popular {
     display: block;
     width: $width;
-    height: 80vh;
+    height: 60vh;
   }
 
   #subscribe {
-    display: block;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .mainInfo {
+      margin: 0;
+    }
+
+    .subscribe__description {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      color: #FFFFFF;
+      font-size: 1em;
+      text-align: center;
+      margin: 0 0 3% 0;
+    }
+
+    .subscribe__emailInput {
+      background: none;
+      border: none;
+      border-bottom: 2px solid #FFFFFF;
+      font-size: 1.5em;
+      color: #FFFFFF;
+      text-align: center;
+
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    .subscribe__acception {
+      width: 100%;
+      text-align: center;
+      
+      .subscribe__checkbox {
+        
+
+        input {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+
+          &:not(:disabled):not(:checked)+span:hover::before {
+            border-color: #ffd9b3;
+          }
+          &:not(:disabled):active+span::before {
+            background-color: #ffdeb3;
+            border-color: #ffe1b3;
+          }
+          &:focus+span::before {
+            box-shadow: 0 0 0 0.2rem rgba(255, 153, 0, 0.25);
+          }
+          &:focus:not(:checked)+span::before {
+            border-color: #ffb980;
+          }
+          &:checked+span::before {
+            border-color: #ef940b;
+            background-color: #ef720b;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+          }
+          &:disabled+span::before {
+            background-color: #efebe9;
+          }
+        }
+
+        .subscribe__acceptionText {
+          font-family: 'Inter', sans-serif;
+          font-style: normal;
+          font-weight: 100;
+          color: #FFFFFF;
+          user-select: none;
+          a {
+            color: #FFFFFF;
+          }
+          
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 1px solid #adb5bd;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+          }
+        }
+      }
+      
+    }
+
+
+    .subscribe__btn {}
   }
 }
 </style>
