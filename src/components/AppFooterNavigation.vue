@@ -29,5 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.navigation__part {
+  font-weight: 300;
+}
 </style>

@@ -62,7 +62,7 @@
           </span>
         </label>    
       </p>
-      <button class='subscribe__btn'></button>
+      <button class='subscribe__btn'>Subscribe</button>
     </div>
   </div>
 </template>
@@ -129,25 +129,20 @@ $height: 100vh;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-    }
-
-    #welcome__btnCatalog:hover {
-      background-color: #ffffff66;
-
-    }
-
-    #welcome__btnCatalog:active {
-      background-color: #ffffff66;
-      border: 3px solid rgb(99 60 54);
-      color: rgb(99 60 54);
-
-    }
-
-    #welcome__btnCatalog:focus {
-      background-color: #ffffff66;
-      border: 3px solid rgb(99 60 54);
-      color: rgb(99 60 54);
-
+    
+      &:hover {
+        background-color: #ffffff66;
+      }
+      &:active {
+        background-color: #ffffff66;
+        border: 3px solid rgb(99 60 54);
+        color: rgb(99 60 54);
+      }
+      &:focus {
+        background-color: #ffffff66;
+        border: 3px solid rgb(99 60 54);
+        color: rgb(99 60 54);
+      }
     }
   }
 }
@@ -223,6 +218,7 @@ $height: 100vh;
   }
 
   #subscribe {
+    margin-top: 5%;
     height: 35vh;
     display: flex;
     flex-direction: column;
@@ -319,9 +315,28 @@ $height: 100vh;
       }
       
     }
-
-
-    .subscribe__btn {}
+    .subscribe__btn {
+      padding: 2% 7% 2% 6%;
+      margin-bottom: 10%;
+      border: none;
+      border-radius: 0 0 55px 0;
+      background-color: #E9A14D;
+      color: white;
+      font-size: 1em;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 600;
+   
+      &:hover {
+        background-color: #e69f4966;
+      }
+      &:active {
+        background-color: #ffffff66;
+      }
+      &:focus {
+        background-color: #a04800;
+      } 
+    }
   }
 }
 </style>

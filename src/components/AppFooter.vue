@@ -38,10 +38,9 @@ $font-weight: bold;
 
 
 footer {
-  // position: absolute;
-  // margin-top: -80px;
   width: 100%;
-  height: 35%;
+  height: 40vh;
+  padding: 0% 0% 0% 0%;
   left: 0px;
   top: 100%;
   background: #191919;
@@ -88,17 +87,12 @@ footer {
 
       #insta {
         background-image: url('../icons/instagram.svg');
-
       }
-
       #faceb {
         background-image: url('../icons/facebook.svg');
-
       }
-
       #pin {
         background-image: url('../icons/pinterest.svg');
-
       }
     }
 
