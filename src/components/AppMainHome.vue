@@ -5,9 +5,10 @@
         <h1 class='mainInfo'>
           New collection
         </h1>
-        <button type='button' id='welcome__btnCatalog'>
-          GO TO CATALOG
-        </button>
+          <button @click="redirectToCatalog" type='button' id='welcome__btnCatalog'>
+            GO TO CATALOG
+          </button>
+
       </div>
     </div>
   </div>
@@ -15,12 +16,12 @@
   <div id='nav'>
     <div class='nav__photo' id='nav__photo_man'>
       <h1 class='mainInfo'>
-        <a href=''>Man</a>
+        <a href='#'>Man</a>
       </h1>
     </div>
     <div class='nav__photo' id='nav__photo_woman'>
       <h1 class='mainInfo'>
-        <a href=''>Woman</a>
+        <a href='#'>Woman</a>
       </h1>
     </div>
   </div>
@@ -49,20 +50,25 @@
         Subscribe to newsletter
       </h1>
       <h4 class='subscribe__description'>Sign up for email updates on the our latest offers and news</h4>
-      <input name='email' class='subscribe__emailInput' placeholder='Enter Your Email' />
-      
+      <input 
+        name='email' 
+        class='subscribe__emailInput' 
+        placeholder='Enter Your Email' 
+        v-model.trim='subscribeAccept.email'
+        />     
       <p class='subscribe__acception'>
         <label class='subscribe__checkbox'>
           <input 
             type='checkbox' 
             name='acception'
+            v-model='subscribeAccept.acception'
           >
           <span class='subscribe__acceptionText'>
             I accept the terms of <a href='#'>Privacy Policy</a>
           </span>
         </label>    
       </p>
-      <button class='subscribe__btn'>Subscribe</button>
+      <button type='submit' class='subscribe__btn'>Subscribe</button>
     </div>
   </div>
 </template>
@@ -70,6 +76,16 @@
 <script setup>
 import AppMainHomeSale from './AppMainHomeSale.vue';
 import AppMainHomePopular from './AppMainHomePopular.vue';
+import router from '../router'
+
+const subscribeAccept = {
+  email: '',
+  acception: false
+}
+
+function redirectToCatalog () {
+  router.push({ name: 'Catalog' })
+}
 
 </script>
 
